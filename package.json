@@ -1,0 +1,19 @@
+{
+  "name": "ShibaGrilledSalt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "dateformat": "^3.0.3",
+    "discord.js": "^12.2.0",
+    "humanize-duration": "^3.23.1",
+    "quick.db": "^7.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
