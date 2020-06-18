@@ -21,7 +21,7 @@ client.on('ready', () => {
   client.user.setActivity({name: "กำลังเริ่มต้นระบบ! กรุณารอสักครู่", type: "PLAYING"});
   
   function randomstatus() {
-    let status = [`s!help | ${client.users.cache.size} Users!`, `s!help | ${client.guilds.cache.size} Servers!`, `s!help | กำลังแก้ระบบกันฟลัดนะครับ!`]
+    let status = [`s!help | ${client.users.cache.size} Users!`, `s!help | ${client.guilds.cache.size} Servers!`]
     let rstatus = Math.floor(Math.random() * status.length);
     client.user.setActivity(status[rstatus], {type: "WATCHING"});
   }; setInterval(randomstatus, 15000)
@@ -161,7 +161,7 @@ client.on('message', message => {
       if (msminute2 === 0) msminute2 = 1;
       if (mssecond2 === 0) mssecond2 = 1;
       if (msday2 === 0) msday2 = 1;
-      let alltime2 = Math.floor((msday2 * msminute2 * mssecond2 * mshour2 * 1000))
+      let alltime2 = Math.floor((ms2 * 1000))
       const userData = antispamuser.get(message.author.id);
       let msgCount = antispamuser.get(message.author.id).msgCount;
       ++msgCount;
@@ -236,7 +236,7 @@ client.on('message', message => {
         .setDescription(message.member.toString() + " รักษาหายจากการใบ้แล้ว!")
         .setFooter(now)
            message.channel.send(embedmutefinish)
-        }, alltime2)
+        }, ms2)
 
       } else {
         userData.msgCount = msgCount;
@@ -1384,7 +1384,7 @@ client.on('message', message => {
         .setDescription(user2.toString() + " พ้นโทษจากการถูกจำคุกแล้ว!")
         .setFooter(now)
        message.channel.send(embedjailfinish)
-      }, alltime3)
+      }, ms3)
       message.guild.channels.create(`⛓️ คุกของ ${user2.user.username} ⛓️`, {
         type: 'text',
         permissionOverwrites: [{
@@ -1692,7 +1692,7 @@ client.on('message', message => {
         .setDescription(user.toString() + " รักษาหายจากการใบ้แล้ว!")
         .setFooter(now)
        message.channel.send(embedmutefinish)
-      }, alltime)
+      }, ms)
       const embedmute = new MessageEmbed()
        .setTitle("👨‍⚖️ ทำการพิพากษา")
        .setDescription("✅ " + message.member.toString() + " ฉีดยาเพื่อทำการใบ้ " + user.toString() + " เรียบร้อยแล้ว")
