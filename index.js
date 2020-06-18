@@ -68,16 +68,16 @@ client.on('message', message => {
 
   let antiswearswitch = db.get(`antiswear.${message.guild.id}`)
   if (!antiswearswitch) {
-    db.set(`antiswear.${message.guild.id}`, "off")
+    db.set(`antiswear.${message.guild.id}`, "on")
   }
 
   let antispamswitch = db.get(`antispam.${message.guild.id}`)
   if (!antispamswitch) {
-    db.set(`antispam.${message.guild.id}`, "off")
+    db.set(`antispam.${message.guild.id}`, "on")
   }
 
   let antiinvitelinkswitch = db.get(`antiinvitelink.${message.guild.id}`)
-  if (!antiinvitelinkswitch) db.set(`antiinvitelink.${message.guild.id}`, "off")
+  if (!antiinvitelinkswitch) db.set(`antiinvitelink.${message.guild.id}`, "on")
 
   let wwsetupswitch = db.get(`wwsetupswitch_${message.guild.id}`)
 
@@ -148,7 +148,11 @@ client.on('message', message => {
     if(antispamswitch === "on") { // ระบบกันฟลัด ////////////////////////////////////////////////////
 
     if(antispamuser.has(message.author.id)) {
-      let ms2 = Math.floor(db.get(`antispamtime.${message.guild.id}`) * 1000);
+      let antispamtime = db.get(`antispamtime.${message.guild.id}`)
+      if(!db.get(`antispamtime.${message.guild.id}`)) {
+        antispamtime = 3600;
+      } else antispamtime = db.get(`antispamtime.${message.guild.id}`)
+      let ms2 = Math.floor(antispamtime * 1000);
       let msminute2 = Math.floor((ms2/1000/60) % 60)
       let mssecond2 = Math.floor((ms2/1000) % 60)
       let mshour2 = Math.floor((ms2/1000/60/60) % 24)
