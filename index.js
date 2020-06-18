@@ -21,7 +21,7 @@ client.on('ready', () => {
   client.user.setActivity({name: "กำลังเริ่มต้นระบบ! กรุณารอสักครู่", type: "PLAYING"});
   
   function randomstatus() {
-    let status = [`s!help | ${client.users.cache.size} Users!`, `s!help | ${client.guilds.cache.size} Servers!`]
+    let status = [`s!help | ${client.users.cache.size} Users!`, `s!help | ${client.guilds.cache.size} Servers!`, `s!help | กำลังแก้ระบบกันฟลัดนะครับ!`]
     let rstatus = Math.floor(Math.random() * status.length);
     client.user.setActivity(status[rstatus], {type: "WATCHING"});
   }; setInterval(randomstatus, 15000)
