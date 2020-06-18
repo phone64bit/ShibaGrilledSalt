@@ -227,7 +227,7 @@ client.on('message', message => {
         if (message.member.roles.cache.find(r => r.name === "✿ Shiba ✿ Mute System")) return;
 
         message.member.roles.add(message.guild.roles.cache.find(r => r.name === "✿ Shiba ✿ Mute System")).catch(err => {console.log("[!] ANTI SPAM ADD ROLES ERROR REPORT [!]")})
-        setTimeout(() => user.roles.add(message.guild.roles.cache.find(r => r.name === "✿ Shiba ✿ Mute System")).catch(error => {console.log(`[!] ANTI SPAM ADD ROLES2 REPORT [!]`), message.reply(`พบปัญหา ${error}!`)}), 2500)
+        setTimeout(() => message.member.roles.add(message.guild.roles.cache.find(r => r.name === "✿ Shiba ✿ Mute System")).catch(error => {console.log(`[!] ANTI SPAM ADD ROLES2 REPORT [!]`), message.reply(`พบปัญหา ${error}!`)}), 2500)
         const embedmute2 = new MessageEmbed()
          .setTitle("👨‍⚖️ ทำการพิพากษา")
          .setDescription("✅ โรงพยาบาลศรีธัญญาได้ฉีดยาเพื่อทำการใบ้ " + message.member.toString() + " เรียบร้อยแล้ว")
