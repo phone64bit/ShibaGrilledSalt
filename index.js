@@ -1000,9 +1000,9 @@ client.on('message', message => {
          break;
         }
 
-        if(args[1] > 9000000) {
+        if(args[1] > 9999) {
           const embed = new MessageEmbed()
-           .setDescription(message.member.toString() + "⛔ นายท่านใส่เวลามากกว่า `9000000` วินาทีนะ โฮ่ง~~! ")
+           .setDescription(message.member.toString() + "⛔ นายท่านใส่เวลามากกว่า `9999` วินาทีนะ โฮ่ง~~! ")
            .setColor(0xFF0000)
           message.channel.send(embed)
           break;
@@ -1325,9 +1325,9 @@ client.on('message', message => {
         break;
       }
 
-      if(args[1] > 9000000) {
+      if(args[1] > 9999) {
         const embed = new MessageEmbed()
-         .setDescription(message.member.toString() + "⛔ นายท่านใส่เวลามากกว่า `9000000` วินาทีนะ โฮ่ง~~! ")
+         .setDescription(message.member.toString() + "⛔ นายท่านใส่เวลามากกว่า `9999` วินาทีนะ โฮ่ง~~! ")
          .setColor(0xFF0000)
         message.channel.send(embed)
         break;
@@ -1634,9 +1634,9 @@ client.on('message', message => {
         break;
       }
 
-      if(args[1] > 9000000) {
+      if(args[1] > 9999) {
         const embed = new MessageEmbed()
-         .setDescription(message.member.toString() + "⛔ นายท่านใส่เวลามากกว่า `9000000` วินาทีนะ โฮ่ง~~! ")
+         .setDescription(message.member.toString() + "⛔ นายท่านใส่เวลามากกว่า `9999` วินาทีนะ โฮ่ง~~! ")
          .setColor(0xFF0000)
         message.channel.send(embed)
         break;
