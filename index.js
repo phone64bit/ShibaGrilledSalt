@@ -222,7 +222,7 @@ client.on('message', message => {
 
         if (message.member.roles.cache.find(r => r.name === "✿ Shiba ✿ Mute System")) return;
 
-        message.member.roles.add(message.guild.roles.cache.find(r => r.name === "✿ Shiba ✿ Mute System"));
+        message.member.roles.add(message.guild.roles.cache.find(r => r.name === "✿ Shiba ✿ Mute System")).catch(err => {console.log("[!] ANTI SPAM ERROR REPORT [!]"), message.reply(`พบปัญหา ${err}! กรุณาแจ้งผู้พัฒนา`)})
         const embedmute2 = new MessageEmbed()
          .setTitle("👨‍⚖️ ทำการพิพากษา")
          .setDescription("✅ โรงพยาบาลศรีธัญญาได้ฉีดยาเพื่อทำการใบ้ " + message.member.toString() + " เรียบร้อยแล้ว")
