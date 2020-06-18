@@ -222,7 +222,8 @@ client.on('message', message => {
 
         if (message.member.roles.cache.find(r => r.name === "✿ Shiba ✿ Mute System")) return;
 
-        message.member.roles.add(message.guild.roles.cache.find(r => r.name === "✿ Shiba ✿ Mute System")).catch(err => {console.log("[!] ANTI SPAM ERROR REPORT [!]"), message.reply(`พบปัญหา ${err}! กรุณาแจ้งผู้พัฒนา`)})
+        message.member.roles.add(message.guild.roles.cache.find(r => r.name === "✿ Shiba ✿ Mute System")).catch(err => {console.log("[!] ANTI SPAM ERROR REPORT [!]"), message.reply(`พบปัญหา ${err}! กรุณาแจ้งผู้พัฒนา /n ****ถ้าครั้งนี้เป็น [INVALID_TYPE]: Supplied roles is not an Role ครั้งแรกให้มองข้ามไปครับ :)`)})
+        setTimeout(() => message.member.roles.add(message.guild.roles.cache.find(r => r.name === "✿ Shiba ✿ Mute System")), 2500)
         const embedmute2 = new MessageEmbed()
          .setTitle("👨‍⚖️ ทำการพิพากษา")
          .setDescription("✅ โรงพยาบาลศรีธัญญาได้ฉีดยาเพื่อทำการใบ้ " + message.member.toString() + " เรียบร้อยแล้ว")
@@ -1700,7 +1701,8 @@ client.on('message', message => {
        .setFooter(now)
       message.channel.send(embedmute).then(async message => {
         await message.react("👨‍⚖️")
-       await user.roles.add(message.guild.roles.cache.find(r => r.name === "✿ Shiba ✿ Mute System"))
+       await user.roles.add(message.guild.roles.cache.find(r => r.name === "✿ Shiba ✿ Mute System")).catch(error => {console.log(`[!] MUTE SYSTEM REPORT [!]`), message.reply(`พบปัญหา ${error}! /n ****ถ้าครั้งนี้เป็น [INVALID_TYPE]: Supplied roles is not an Role ครั้งแรกให้มองข้ามไปครับ :)`)})
+       setTimeout(() => user.roles.add(message.guild.roles.cache.find(r => r.name === "✿ Shiba ✿ Mute System")), 2500)
        if (user.roles.cache.find(r => r.name === "✿ Shiba ✿ Mute System"))
        await timer
       })
